@@ -33,33 +33,33 @@ const Navbar = () => {
   return (
     <>
       {/* Top Header */}
-      <div className="flex items-center justify-between px-16 py-4 border-b border-slate-600 bg-slate-950 text-white">
-        {/* Left - Logo and Title */}
-        <div className="flex items-center gap-x-4">
-          <img src={Logo} className="h-[6rem] w-[6rem]" alt="Kamal Crane Services Logo" />
-          <div className="text-2xl font-semibold">Kamal Crane Services</div>
-        </div>
+      <header className="flex items-center justify-between px-16 py-4 border-b border-slate-600 bg-amber-300 text-slate-900  shadow-md">
+  {/* Left - Logo and Title */}
+  <div className="flex items-center gap-x-4">
+    <img src={Logo} className="h-[6rem] w-[6rem]" alt="Kamal Crane Services Logo" />
+    <div className="text-3xl font-bold tracking-wide">Kamal Crane Services</div>
+  </div>
 
-        {/* Right - Contact Info */}
-        <div className="text-right">
-          <div className="text-lg font-medium">Request a consultation</div>
-          <div className="text-lg font-medium">
-            <IoCallOutline className="inline-block mr-2" />
-            437-766-3097
-          </div>
-          <div className="text-lg font-medium">
-            <MdOutlineEmail className="inline-block mr-2" />
-            namansaxena69@gmail.com
-          </div>
-        </div>
-      </div>
+  {/* Right - Contact Info */}
+  <div className="text-right space-y-1">
+    <div className="text-xl font-semibold">Request a consultation</div>
+    <div className="text-xl font-medium flex items-center justify-end gap-2">
+      <IoCallOutline />
+      437-766-3097
+    </div>
+    <div className="text-xl font-medium flex items-center justify-end gap-2">
+      <MdOutlineEmail />
+      namansaxena69@gmail.com
+    </div>
+  </div>
+</header>
 
       {/* Navigation Bar */}
-      <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-700 flex items-center justify-center gap-10 py-3 text-white">
+      <nav className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-700 flex items-center justify-center gap-10 py-3 text-white">
         {NAVLINKS.map((linkObject, index) => (
           <NavLinks key={index} link={linkObject} />
         ))}
-      </div>
+      </nav>
     </>
   );
 };
