@@ -1,76 +1,67 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-import { GoDotFill } from "react-icons/go";
-import logo from "../assets/logo.png"
+import React from 'react';
+import Logo from '../assets/logo.png';
+import { IoCallOutline } from "react-icons/io5";
+import { MdOutlineEmail } from "react-icons/md";
+import NavLinks from './NavLinks';
+
+const NAVLINKS = [
+  {
+    mainLink: 'Home',
+    hasSubLinks: false,
+  },
+  {
+    mainLink: 'About',
+    hasSubLinks: true,
+    subLinks: ['Service Area', 'Fleet', 'Diversity'],
+  },
+  {
+    mainLink: 'Crane Rentals',
+    hasSubLinks: true,
+    subLinks: ['Crane Rentals'],
+  },
+  {
+    mainLink: 'Gallery',
+    hasSubLinks: false,
+  },
+  {
+    mainLink: 'Contact',
+    hasSubLinks: false,
+  },
+];
 
 const Navbar = () => {
   return (
-    <div className="shadow-lg"> 
-      {/* Top Info Bar */}
-      <div className='flex items-center justify-between bg-[#1F2937] text-[#F9FAFB] px-6 py-4'>
-        <div className='flex items-center gap-4'>
-          <img src={logo} alt="KCS Logo" className='h-16 w-16 object-contain' />
-          <div>
-            <h1 className="text-2xl font-bold tracking-wide uppercase text-[#FACC15]">Kamal Crane Service</h1>
-            <p className="text-sm text-gray-300">Request a Consultation Today</p>
-          </div>
+    <>
+      {/* Top Header */}
+      <div className="flex items-center justify-between px-16 py-4 border-b border-slate-600 bg-slate-950 text-white">
+        {/* Left - Logo and Title */}
+        <div className="flex items-center gap-x-4">
+          <img src={Logo} className="h-[6rem] w-[6rem]" alt="Kamal Crane Services Logo" />
+          <div className="text-2xl font-semibold">Kamal Crane Services</div>
         </div>
-        <div className="text-sm flex items-center gap-2">
-          <span className="font-medium">📞</span>
-          <span className="font-semibold">413-766-3097</span>
-          <GoDotFill className="text-[#FACC15] text-sm" />
-          <span className="font-semibold">namansaxena69@gmail.com</span>
+
+        {/* Right - Contact Info */}
+        <div className="text-right">
+          <div className="text-lg font-medium">Request a consultation</div>
+          <div className="text-lg font-medium">
+            <IoCallOutline className="inline-block mr-2" />
+            437-766-3097
+          </div>
+          <div className="text-lg font-medium">
+            <MdOutlineEmail className="inline-block mr-2" />
+            namansaxena69@gmail.com
+          </div>
         </div>
       </div>
 
       {/* Navigation Bar */}
-      <div className='bg-[#FACC15]'>
-        <nav className='flex justify-center space-x-10 py-4 text-[#1F2937] font-bold text-lg tracking-wide uppercase'>
-          <NavLink 
-          
-            to="/" 
-            className={({ isActive }) => 
-              isActive ? "text-[#DC2626] underline" : "hover:text-[#DC2626] transition duration-200"
-            }
-          >
-            Home
-          </NavLink>
-          <NavLink 
-            to="/contact" 
-            className={({ isActive }) => 
-              isActive ? "text-[#DC2626] underline" : "hover:text-[#DC2626] transition duration-200"
-            }
-          >
-            Contact
-          </NavLink>
-          <NavLink 
-            to="/about" 
-            className={({ isActive }) => 
-              isActive ? "text-[#DC2626] underline" : "hover:text-[#DC2626] transition duration-200"
-            }
-          >
-            About
-          </NavLink>
-          <NavLink 
-            to="/gallery" 
-            className={({ isActive }) => 
-              isActive ? "text-[#DC2626] underline" : "hover:text-[#DC2626] transition duration-200"
-            }
-          >
-            Gallery
-          </NavLink>
-          <NavLink 
-            to="/services" 
-            className={({ isActive }) => 
-              isActive ? "text-[#DC2626] underline" : "hover:text-[#DC2626] transition duration-200"
-            }
-          >
-            Services
-          </NavLink>
-        </nav>
+      <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-700 flex items-center justify-center gap-10 py-3 text-white">
+        {NAVLINKS.map((linkObject, index) => (
+          <NavLinks key={index} link={linkObject} />
+        ))}
       </div>
-    </div>
-  )
-}
+    </>
+  );
+};
 
-export default Navbar
+export default Navbar;
