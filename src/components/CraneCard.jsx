@@ -2,7 +2,7 @@ import React from 'react'
 import cImage4 from '../assets/Crane-Images/c4.jpg'
 const CraneCard = () => {
   return (
-  <div className="card bg-white text-black w-96 shadow-lg shadow-slate-500">
+  <div className="card bg-white text-black w-full shadow-lg shadow-slate-500">
   <figure>
     <img
       src={cImage4}
