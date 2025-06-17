@@ -15,7 +15,7 @@ const NavLinks = ({ link }) => {
 
       {link.hasSubLinks && (
         <div
-          className={`absolute top-full left-0 mt-2 min-w-[180px] bg-white text-lg text-black rounded-md shadow-lg  z-10 p-2 transition-all duration-300 ease-in-out 
+          className={`absolute top-full left-0 mt-2 min-w-[180px] bg-white text-lg text-black rounded-md shadow-lg  z-9999 p-2 transition-all duration-300 ease-in-out 
           ${active ? 'opacity-100 translate-y-0 visible' : 'opacity-0 translate-y-2 invisible'}`}
         >
           {link.subLinks?.map((subLink, i) => (
